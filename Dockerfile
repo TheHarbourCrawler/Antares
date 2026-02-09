@@ -1,9 +1,14 @@
-FROM python:3.10-slim
-WORKDIR /app
+FROM python:3.9-slim
+
 RUN pip install flask requests
 
-COPY . .
+
+WORKDIR /app
+
+COPY antares_c2.py .
+
 
 EXPOSE 8080
 
-ENTRYPOINT ["python", "antares.py", "--mode", "server", "--set-port", "8080"]
+
+ENTRYPOINT ["python", "antares_c2.py"]
