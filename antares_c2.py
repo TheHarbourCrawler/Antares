@@ -168,7 +168,7 @@ def show_satellites():
 def live_monitor_mode():
     SERVER_STATE["command"] = "ZENITH"
     print_banner()
-    print("\033[92m[+] CANAL DESCHIS: 'ZENITH'. Sateliții trimit date...\033[0m")
+    print("\033[92m[+] CANAL DESCHIS: 'ZENITH'. Satelitii trimit date...\033[0m")
     print("\033[90m[Apasa Ctrl+C pentru a opri receptia]\033[0m\n")
     
     if not os.path.exists(LOOT_FILE): open(LOOT_FILE, 'w').close()
@@ -188,7 +188,7 @@ def live_monitor_mode():
 def main_menu(port):
     while True:
         print_banner()
-        # Numaram rapid satelitii activi pentru dashboard-ul principal
+        
         active = sum(1 for t in SERVER_STATE['nodes'].values() if time.time() - t < 15)
         
         print(f"Server IP: \033[94m0.0.0.0:{port}\033[0m")
